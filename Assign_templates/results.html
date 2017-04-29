@@ -1,0 +1,25 @@
+<html>
+<center>
+<head>
+<title>
+Quiz Results
+</title>
+</head>
+<body>
+<h1>Quiz Results</h1>
+<table name="results" border = "1">
+<tr>
+<th colspan="3" style="text-align: center"><strong>Quiz Results {% if studentname %} for {{ studentname }} {% endif %}</strong></th>
+</tr>
+<tr>
+<th>Quiz ID</th><th>Score</th>
+</tr>
+{% for result in results %}
+<tr><td>{{result.quiz_id}}</td><td>{{result.score|safe}}</td></tr>
+{% else %}
+<tr><strong>No Quiz Results</strong></tr>
+{% endfor %}<br><br>
+</table>
+</body>
+</center>
+</html>
